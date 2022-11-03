@@ -51,7 +51,7 @@ def main():
                     print(f"\nScheduling next questions ...\n")
                     time.sleep(choice(range(int(os.getenv("FLOOR_BOUND", 5)), int(os.getenv("CEIL_BOUND", 10)))))
                 except KeyboardInterrupt:
-                    user_answer = input("\nDo you want to change topic/lesson? [Y/n]: ")
+                    user_answer = input("\nChange topic/lesson? [Y/n]: ")
                     if (user_answer.lower() == "y"):
                         topic = input("Topic: ")
                         lesson = input("Lesson: ")
@@ -60,7 +60,7 @@ def main():
                         raise KeyboardInterrupt()
 
         except KeyboardInterrupt:
-            exit_program = input("\nDo you want to exit program? [Y/n]: ")
+            exit_program = input("\nQuit program? [Y/n]: ")
             if (exit_program.lower() == "y"):
                 break
 
