@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/python
 
 def main():
     print(f"\nWelcome to add topic/lesson/question/answer(s)")
