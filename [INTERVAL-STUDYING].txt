@@ -1,0 +1,38 @@
+[INTERVAL-STUDYING]
+
+DESCRIPTION --> IS consist of a way of studying following the principle of interval reinforce of knowledge. The system will be running in the background and given certain time, it will pop up a series of questions related to a topic previously created and configured by the user. Once finished, the system will feedback the user with the responses given and the actual answers stored in the database. The system will also contain a portal to introduce new topis and questions with the correct answers. This way you are able to create new topics, edit existing topics (add new questions, edit existing, remove) and delete topics.
+
+{ARCHITECTURE}
+
+1. JAVA BACKEND
+2. ANGULAR FRONTEND
+3. PYTHON CLI PROGRAM
+4. MYSQL DATABASE
+
+- TRY PACK AND RUN ALL PARTS AS DOCKER CONTAINERS
+
+TOPIC: TYPES OF PROGRAMMING LENGUAGES
+
+1. Python is a ... lenguage
+
+2. C is a ... lenguage
+
+3. Java is a ... lenguage
+
+4. The difference between ... and ... is 
+
+5. Why is java different from C?
+
+6. What is a pipe in OS?
+
+7. What is a socket in OS?
+
+- 
+
+TOPIC: Computer Programming General
+
+Lesson: Computer Programming Concepts
+
+Question: What is a \'Guard\'?
+
+Answer: In computer programming, a guard is a boolean expression that must evaluate to true if the program execution is to continue in the branch in question. Regardless of which programming language is used, a guard clause, guard code, or guard statement, is a check of integrity preconditions used to avoid errors during execution.
