@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 import os
 import time
 from random import choice
-from sqlalchemy import create_engine, text
+from sqlalchemy import text
+from create_engine import ENGINE
 
 
 load_dotenv()
@@ -15,8 +16,6 @@ freq = 440  # Hz
 
 topic = os.getenv("TOPIC")
 lesson = os.getenv("LESSON")
-
-engine = create_engine(os.getenv("CONNECTION"))
 
 def show_config():
     print(f"\nYour configuration looks like this:\n\nTopic: {topic}\nLesson: {lesson}")
@@ -30,8 +29,8 @@ def get_all_lessons_by_topic(topic):
     return list()
 
 
-def get_questions_and_answers(connection):
-    return connection.execute(text("SELECT q.*, a.* FROM questions q JOIN lessons l ON q.lesson_id = l.id JOIN topics t ON l.topic_id = t.id JOIN answers a ON a.question_id = q.id WHERE t.name = :topic AND l.name = :lesson"), topic=topic, lesson=lesson)
+def get_questions_and_answers():
+    return ENGINE.execute(text("SELECT q.*, a.* FROM questions q JOIN lessons l ON q.lesson_id = l.id JOIN topics t ON l.topic_id = t.id JOIN answers a ON a.question_id = q.id WHERE t.name = :topic AND l.name = :lesson"), topic=topic, lesson=lesson)
 
 #main loop for the program
 def main():
@@ -42,7 +41,7 @@ def main():
             show_config()
             while (True):
                 winsound.Beep(freq, duration)
-                questions_list = get_questions_and_answers(engine)
+                questions_list = get_questions_and_answers()
                 try:
                     show_questions(questions_list)
                     print(f"\nScheduling next questions ...\n")

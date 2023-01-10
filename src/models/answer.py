@@ -1,5 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
-from src.models import Base
+from sqlalchemy.orm import declarative_base
+
+Base = declarative_base()
 
 
 class Answer(Base):
